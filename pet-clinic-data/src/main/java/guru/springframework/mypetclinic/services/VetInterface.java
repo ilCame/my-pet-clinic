@@ -4,10 +4,6 @@ import guru.springframework.mypetclinic.model.Vet;
 
 import java.util.Set;
 
-public interface VetInterface {
-    Vet findById(Long id);
+public interface VetInterface extends CrudeService<Vet, Long> {
 
-    Vet save(Vet vet);
-
-    Set<Vet> findAll();
 }
