@@ -1,4 +1,4 @@
-package guru.springframework.mypetclinic.model;
+package guru.springframework.sfgpetclinic.model;
 
 import java.io.Serializable;
 
