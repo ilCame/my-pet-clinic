@@ -40,25 +40,19 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
         Owner savedOwner = null;
 
+        //more comment in branch --> lesson124
         if(object != null){
-            // l'owner puo' avere uno o piu' pet
             if(object.getPets() != null){
-                object.getPets().forEach(pet -> { // per ogni pet che andremo a salvare dobbiamo fare in modo che abbiano un tipo prima di salvarli
+                object.getPets().forEach(pet -> {
                     if (pet.getPetType() != null) {
-                        // identificare i pet che hanno veramente bisogno di essere salvati - quelli con null
                         if (pet.getPetType().getId() == null) {
-                            //Salviamo il tipo usando il servizio petType
                             pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
                     }else{
-                        throw new RuntimeException("Pet Type is required"); // eccezione quando manca il tipo del pet
+                        throw new RuntimeException("Pet Type is required");
                     }
-
-                    //tutti i pet che devono essere salvati - il pet id deve essere nullo
                     if (pet.getId() == null){
-                        // salviamo il pet id
                         Pet savedPet = petService.save(pet);
-                        // mettiamo il pet id che abbiamo salvato nel loop corrente - completiamo quindi l'associazione con l'owner
                         pet.setId(savedPet.getId());
                     }
                 });
