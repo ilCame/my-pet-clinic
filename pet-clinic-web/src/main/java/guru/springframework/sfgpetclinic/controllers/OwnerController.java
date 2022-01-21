@@ -20,4 +20,9 @@ public class OwnerController {
         model.addAttribute("owners", ownerService.findAll()); //il primo parametro e' il nome della proprieta' all'interno del modello, find all ci da un set capace di iterare
         return "owners/index";
     }
+
+    @RequestMapping({"/find", "oups"})
+    public String findOwners(){
+        return "notimplementedyet";
+    }
 }
