@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
-@MappedSuperclass //e` una annotazione speciale che permette di dire che e` una classe base per oggetti che derivano da essa
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
     @Id
