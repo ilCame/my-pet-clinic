@@ -58,7 +58,7 @@ class OwnerControllerTest {
         when(ownerService.findAll()).thenReturn(owners);
 
         mockMvc.perform(get("/owners"))
-                .andExpect(status().isOk())   // sto chiedendo se lo status e' ok, quindi se mi ritorna un codice 200
+                .andExpect(status().isOk())
                 .andExpect(view().name("owners/index"))
                 .andExpect(model().attribute("owners", hasSize(2)));
     }
