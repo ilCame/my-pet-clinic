@@ -17,14 +17,9 @@ import java.util.Set;
 public class OwnerSDJpa implements OwnerService {
 
     private final OwnerRepository ownerRepository;
-    private final PetRepository petRepository;
-    private final PetTypeRepository petTypeRepository;
 
-    public OwnerSDJpa(OwnerRepository ownerRepository, PetRepository petRepository,
-                      PetTypeRepository petTypeRepository) {
+    public OwnerSDJpa(OwnerRepository ownerRepository) {
         this.ownerRepository = ownerRepository;
-        this.petRepository = petRepository;
-        this.petTypeRepository = petTypeRepository;
     }
 
     @Override

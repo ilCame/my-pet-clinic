@@ -43,7 +43,7 @@ class OwnerMapServiceTest {
 
     @Test
     void delete() {
-        ownerMapService.delete(ownerMapService.findById(ownerId));
+        ownerMapService.delete(ownerMapService.findByLastName(lastName));
 
         assertEquals(0, ownerMapService.findAll().size());
     }
