@@ -101,7 +101,6 @@ class OwnerSDJpaTest {
 
     @Test
     void findByLastName() {
-        //quando il metodo findByLastName e' chiamato voglio che mi ritorni l'oggetto returnOwner
         when(ownerRepository.findByLastName(any())).thenReturn(returnOwner);
 
         Owner smith = ownerService.findByLastName(LAST_NAME);
